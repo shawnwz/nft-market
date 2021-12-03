@@ -1,0 +1,1 @@
+export const nftfactoryaddress = "0xdddc6B2963c80a4957eC164c2F6214CD85c543F5" export const nft721address = "0x7e50D7a1408a31ec3567e2A7dfbeDdee29E5DF61"
