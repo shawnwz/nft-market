@@ -6,6 +6,27 @@
 		"requestBodies": {},
 		"responses": {},
 		"schemas": {
+			"BulkMintParams": {
+				"properties": {
+					"wallet": {
+						"type": "string"
+					},
+					"tokenId": {
+						"type": "number",
+						"format": "double"
+					},
+					"amount": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"wallet",
+					"tokenId",
+					"amount"
+				],
+				"type": "object"
+			},
 			"User": {
 				"properties": {
 					"id": {
@@ -79,6 +100,47 @@
 	},
 	"openapi": "3.0.0",
 	"paths": {
+		"/imx/mint": {
+			"post": {
+				"operationId": "Mint",
+				"responses": {
+					"204": {
+						"description": "No content"
+					}
+				},
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/BulkMintParams"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/imx/hello": {
+			"get": {
+				"operationId": "Hello",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "string"
+								}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": []
+			}
+		},
 		"/nfts/get": {
 			"get": {
 				"operationId": "GetAccounts",
